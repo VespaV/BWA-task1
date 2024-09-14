@@ -4,8 +4,8 @@ services:
     volumes:
       - ./:/usr/src/app
     environment:
-      - BED_FILE_PATH=IAD143293_241_Designed.bed
-      - GTF_FILE_PATH=hg19.knownGene.gtf
+      - BED_FILE_PATH
+      - GTF_FILE_PATH
       - INTERSECTED_PATH=intersected.bed
       - UNIPROT_INFO=uniprot_protein_data.xlsx
       - DEBUG = False
