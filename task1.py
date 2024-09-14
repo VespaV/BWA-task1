@@ -30,6 +30,7 @@ class TargetRegions:
 
     def add_gene_id_and_exon(self):
         try:
+            self.ensure_directories_exist()
             self.read_metadata()
             self.intersect_files()
             self.load_data()
@@ -40,6 +41,10 @@ class TargetRegions:
 
         except Exception as e:
             self.debug_log(e, is_important=True, is_error=True)
+
+    def ensure_directories_exist(self):
+        os.makedirs('intersected_results', exist_ok=True)
+        os.makedirs('gene_disease_info', exist_ok=True)
 
     def get_prot_info(self):
         try:
